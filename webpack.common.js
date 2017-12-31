@@ -5,6 +5,7 @@ module.exports={
     output: {
         path: path.resolve(__dirname,'build'),
         filename: 'bundle.js',
+        publicPath: '/build/'
     },
     module:{
         rules:[
@@ -29,6 +30,7 @@ module.exports={
             }
         ]
     },
+    plugins:[],
     resolve: {
         extensions: ['*','.js','.vue','.json','.css','.sass','.scss'],
     },
