@@ -4,7 +4,7 @@ h1.style.color="white";
 const div=document.querySelector('#app');
 div.appendChild(h1).style.backgroundColor="gray";
 const h2=document.createElement('h2');
-h2.innerText="yang shu shan";
+h2.innerText="yang shu shan is an idiot";
 h2.style.color="blue";
 div.appendChild(h2);
 

@@ -5,8 +5,9 @@ const path=require('path');
 module.exports=webpackMerge(commonConfig,{
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: path.resolve(__dirname,'build'),
-        historyApiFallback: true,
+        // contentBase: '/',
+        publicPath: '/', //打包后的bundle在内存中的输出位置, default: '/'
+        historyApiFallback: true, 
         noInfo: true,
         compress: true,
     }

@@ -5,7 +5,7 @@ module.exports={
     output: {
         path: path.resolve(__dirname,'build'),
         filename: 'bundle.js',
-        publicPath: '/build/'
+        // publicPath: '/'
     },
     module:{
         rules:[
@@ -27,12 +27,18 @@ module.exports={
                         sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
                     },
                 }
+            },
+            {
+                test: /\.(png|jpg|svg|gif)$/,
+                loader: 'file-loader',
+                options:{
+                    name: '[name].[ext]?[hash]'
+                }
             }
         ]
     },
-    plugins:[],
     resolve: {
         extensions: ['*','.js','.vue','.json','.css','.sass','.scss'],
     },
     
-}
+    }  
