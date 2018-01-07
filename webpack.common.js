@@ -1,14 +1,14 @@
-const path=require('path')
+const path = require('path')
 
-module.exports={
+module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname,'build'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
     // publicPath: '/'
   },
-  module:{
-    rules:[
+  module: {
+    rules: [
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
@@ -16,28 +16,28 @@ module.exports={
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: path.resolve(__dirname,'./src'),
-      }, 
+        include: path.resolve(__dirname, './src'),
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options:{
-          loaders:{
+        options: {
+          loaders: {
             scss: 'vue-style-loader!css-loader!sass-loader',
-            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
           },
-        }
+        },
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
         loader: 'file-loader',
-        options:{
-          name: '[name].[ext]?[hash]'
-        }
-      }
-    ]
+        options: {
+          name: '[name].[ext]?[hash]',
+        },
+      },
+    ],
   },
   resolve: {
-    extensions: ['*','.js','.vue','.json','.css','.sass','.scss'],
+    extensions: ['*', '.js', '.vue', '.json', '.css', '.sass', '.scss'],
   },
-}           
+}

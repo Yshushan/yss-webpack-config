@@ -6,11 +6,11 @@
 
 <script>
   export default {
-    data(){
+    data () {
       return {
         msg: 'Hello, Yang Shushan!',
       }
-    }
+    },
   }
 </script>
 
