@@ -1,6 +1,6 @@
 const webpackMerge = require('webpack-merge')
 const commonConfig = require('./webpack.common.js')
-const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = webpackMerge(commonConfig, {
   devtool: 'inline-source-map',
@@ -11,4 +11,10 @@ module.exports = webpackMerge(commonConfig, {
     noInfo: true,
     compress: true,
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "index.html",
+      inject: true
+    })
+  ]
 })

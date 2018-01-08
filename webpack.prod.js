@@ -14,8 +14,13 @@ module.exports = webpackMerge(commonConfig, {
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new HtmlWebpackPlugin({
-      title: 'Chat App',
-      // filename: 'assets/index.html'
+      template: "index.html",
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+      },
     }),
   ],
 })
